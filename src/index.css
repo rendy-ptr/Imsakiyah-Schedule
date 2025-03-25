@@ -2,9 +2,68 @@
 
 * {
   font-family: 'Prompt', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    #ec4899,
+    #f43f5e,
+    #db2777,
+    #d946ef,
+    #c026d3,
+    #c084fc,
+    #6d28d9,
+    #ec4899
+  );
+  background-size: 200% 100%;
+  animation: gradientShift 5s infinite ease-in-out;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(10vw, 10vh) scale(1);
+  }
+  25% {
+    transform: translate(70vw, 20vh) scale(1.2);
+  }
+  50% {
+    transform: translate(60vw, 70vh) scale(1);
+  }
+  75% {
+    transform: translate(20vw, 60vh) scale(1.1);
+  }
+  100% {
+    transform: translate(10vw, 10vh) scale(1);
+  }
+}
+
+.animate-glowMove {
+  animation: glowMove 20s infinite alternate ease-in-out;
+}

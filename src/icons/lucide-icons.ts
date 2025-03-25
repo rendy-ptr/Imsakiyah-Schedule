@@ -1,6 +1,7 @@
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun, Github } from 'lucide-react'
 
 export const LucideIcons = {
     Moon,
     Sun,
+    Github
 }

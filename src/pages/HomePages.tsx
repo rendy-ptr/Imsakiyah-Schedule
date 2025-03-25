@@ -2,11 +2,7 @@ import React from 'react'
 import HeroLayouts from '../layouts/HeroLayouts'
 
 const HomePages: React.FC = () => {
-  return (
-    <>
-      <HeroLayouts />
-    </>
-  )
+  return <HeroLayouts />
 }
 
 export default HomePages

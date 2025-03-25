@@ -4,14 +4,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { toggleAnimation } from '../animations'
 
 const Toggle: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark'
+  })
   const { Moon, Sun } = LucideIcons
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
     } else {
       document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
     }
   }, [darkMode])
 

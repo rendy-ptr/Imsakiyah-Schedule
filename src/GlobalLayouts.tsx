@@ -1,11 +1,8 @@
 import React from 'react'
 import Toggle from './components/Toggle'
+import { Outlet } from 'react-router'
 
-interface LayoutProps {
-  children: React.ReactNode
-}
-
-const LayoutWrapper: React.FC<LayoutProps> = ({ children }) => {
+const GlobalLayout: React.FC = () => {
   return (
     <div className="relative min-h-screen flex flex-col bg-neutral-100 dark:bg-zinc-900 transition-colors duration-1000 ease-in-out">
       {/* Efek Glow Bergerak */}
@@ -20,10 +17,10 @@ const LayoutWrapper: React.FC<LayoutProps> = ({ children }) => {
 
       {/* Kontainer Utama */}
       <main className="flex flex-grow items-center justify-center container mx-auto relative z-10">
-        {children}
+        <Outlet />
       </main>
     </div>
   )
 }
 
-export default LayoutWrapper
+export default GlobalLayout

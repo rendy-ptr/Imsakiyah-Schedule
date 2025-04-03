@@ -1,5 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+// Components
+import CustomButton from '../components/Buttons'
+
+// Types
+import type React from 'react'
 
 const HeroLayouts: React.FC = () => {
   return (
@@ -34,16 +37,16 @@ const HeroLayouts: React.FC = () => {
 
       {/* Tombol Aksi (Hanya tombol yang punya margin atas) */}
       <div className="flex gap-4 justify-center mt-4">
-        <a href="https://github.com/rendy-ptr/Imsakiyah-Schedule" target='_blank' rel='noreferrer'>
-          <button className="w-36 h-10 text-xs lg:w-42 lg:h-12 lg:text-base text-neutral-100 bg-zinc-700 dark:text-zinc-700 dark:bg-neutral-100 font-semibold rounded-lg shadow-md cursor-pointer transition-colors duration-1000 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-zinc-700 dark:hover:bg-neutral-200">
-            Kunjungi Github
-          </button>
-        </a>
-        <Link to="/content">
-          <button className="w-32 h-10 text-sm lg:w-40 lg:h-12 lg:text-base text-zinc-100 bg-[#d946ef] dark:text-neutral-100 dark:bg-[#db2777] font-semibold rounded-lg shadow-md cursor-pointer transition-colors duration-1000 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-[#c026d3] dark:hover:bg-[#be185d]">
-            Lihat Jadwal
-          </button>
-        </Link>
+        <CustomButton
+          href="https://github.com/rendy-ptr/Imsakiyah-Schedule"
+          label="Kunjungi Github"
+          variant="white_dark"
+        />
+        <CustomButton
+          to="/content"
+          label="Lihat Jadwal"
+          variant="purple_pink"
+        />
       </div>
     </div>
   )

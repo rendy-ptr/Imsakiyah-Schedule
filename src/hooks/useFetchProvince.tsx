@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-const useFetchProvince = <T,>(url: string) => {
-  const [data, setData] = useState<T | null>(null)
+const useFetchData = (url: string) => {
+  const [data, setData] = useState<string[]>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -13,11 +13,12 @@ const useFetchProvince = <T,>(url: string) => {
       setLoading(true)
       try {
         const response = await fetch(url, { signal })
+
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }
-        const result: T = await response.json()
-        setData(result)
+        const result = await response.json()
+        setData(result.data)
       } catch (error: unknown) {
         if (error instanceof Error && error.name !== 'AbortError') {
           setError(error.message)
@@ -37,4 +38,4 @@ const useFetchProvince = <T,>(url: string) => {
   return { data, loading, error }
 }
 
-export default useFetchProvince
+export default useFetchData

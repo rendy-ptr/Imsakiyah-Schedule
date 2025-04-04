@@ -19,4 +19,34 @@ type DropdownSelectProps = {
   selectedProvinsi?: string | null
 }
 
-export type { ButtonsProps, DropdownSelectProps }
+type ImsakiyahItem = {
+  tanggal: number
+  imsak: string
+  subuh: string
+  terbit: string
+  dhuha: string
+  dzuhur: string
+  ashar: string
+  maghrib: string
+  isya: string
+}
+
+type ImsakiyahData = {
+  provinsi: string
+  kabkota: string
+  hijriah: string
+  masehi: string
+  imsakiyah: ImsakiyahItem[]
+}
+
+type ApiResponse = {
+  data: ImsakiyahData[]
+}
+
+export type {
+  ButtonsProps,
+  DropdownSelectProps,
+  ImsakiyahItem,
+  ImsakiyahData,
+  ApiResponse,
+}

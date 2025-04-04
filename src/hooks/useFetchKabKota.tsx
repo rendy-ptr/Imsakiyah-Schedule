@@ -1,24 +1,23 @@
 import { useEffect, useState } from 'react'
 
-const useFetchKabKota = (url: string, selectedProvinsi: string | null) => {
-  const [kabupatenData, setKabupatenData] = useState<string[]>([])
-  const [kabupatenLoading, setKabupatenLoading] = useState(false)
-  const [kabupatenError, setKabupatenError] = useState<string | null>(null)
+const useFetchKabKota = (url: string, provinsiValue: string) => {
+  const [data, setData] = useState<string[]>([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!selectedProvinsi) {
-      setKabupatenData([])
-      setKabupatenError(null)
+    if (!provinsiValue) {
+      setData([])
+      setError(null)
       return
     }
 
-    setKabupatenData([])
-    setKabupatenLoading(true)
-    setKabupatenError(null)
+    setData([])
+    setLoading(true)
+    setError(null)
 
     const controller = new AbortController()
     const fetchKabupaten = async () => {
-
       try {
         const response = await fetch(url, {
           method: 'POST',
@@ -26,7 +25,7 @@ const useFetchKabKota = (url: string, selectedProvinsi: string | null) => {
             'Content-Type': 'application/json',
             Accept: '*/*',
           },
-          body: JSON.stringify({ provinsi: selectedProvinsi }),
+          body: JSON.stringify({ provinsi: provinsiValue }),
           signal: controller.signal,
         })
 
@@ -34,22 +33,22 @@ const useFetchKabKota = (url: string, selectedProvinsi: string | null) => {
           throw new Error(`HTTP error! Status: ${response.status}`)
 
         const result = await response.json()
-        setKabupatenData(result.data || [])
+        setData(result.data || [])
       } catch (error: unknown) {
         if (error instanceof Error && error.name !== 'AbortError') {
-          setKabupatenError(error.message)
+          setError(error.message)
         }
       } finally {
-        setKabupatenLoading(false)
+        setLoading(false)
       }
     }
 
     fetchKabupaten()
 
     return () => controller.abort()
-  }, [url, selectedProvinsi])
+  }, [url, provinsiValue])
 
-  return { kabupatenData, kabupatenLoading, kabupatenError }
+  return { data, loading, error }
 }
 
 export default useFetchKabKota

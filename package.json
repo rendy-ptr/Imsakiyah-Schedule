@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@react-router/dev": "^7.4.1",
     "@tailwindcss/vite": "^4.0.14",
-    "framer-motion": "^12.5.0",
+    "framer-motion": "^12.6.3",
     "lucide-react": "^0.483.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

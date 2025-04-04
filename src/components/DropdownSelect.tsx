@@ -14,7 +14,11 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   disable = false,
 }) => {
   return (
-    <div className="flex flex-col bg-zinc-700 dark:bg-neutral-100 p-4 rounded-lg shadow-xl w-60 lg:w-72 transition-colors duration-1000 ease-in-out">
+    <div
+      className={`flex flex-col bg-zinc-700 dark:bg-neutral-100 p-4 rounded-lg shadow-xl w-60 lg:w-72 transition-colors duration-1000 ease-in-out ${
+        id === 'provinsi' ? 'mt-12 lg:mt-0' : ''
+      }`}
+    >
       <label
         htmlFor={id}
         className="font-semibold text-lg mb-2 text-neutral-100 dark:text-zinc-700"

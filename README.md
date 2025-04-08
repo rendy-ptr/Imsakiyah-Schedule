@@ -1,54 +1,74 @@
-# React + TypeScript + Vite
+# Imsakiyah Schedule
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi jadwal imsakiyah (waktu berbuka puasa dan sahur) selama bulan Ramadhan yang dikembangkan dengan React.js dan Bun.
 
-Currently, two official plugins are available:
+## 🌙 Deskripsi
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Imsakiyah Schedule adalah aplikasi web modern yang memudahkan umat Muslim untuk mengakses jadwal waktu imsak, sahur, dan berbuka puasa selama bulan Ramadhan. Aplikasi ini dikembangkan menggunakan React.js dan Bun sebagai runtime JavaScript/TypeScript, serta memanfaatkan API dari sumber eQuran untuk mendapatkan data jadwal imsakiyah yang akurat.
 
-## Expanding the ESLint configuration
+## ✨ Fitur
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Menampilkan jadwal imsakiyah harian
+- Pencarian jadwal berdasarkan lokasi/kota
+- Tampilan responsif dan intuitif
+- Dukungan untuk berbagai wilayah Indonesia
+- Mode gelap/terang (theme switching)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 Cara Menjalankan
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Install Bun (jika belum)**
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies**
+   ```bash
+   bun install
+   ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+3. **Jalankan aplikasi dalam mode development**
+   ```bash
+   bun run dev
+   ```
+
+4. **Build untuk produksi**
+   ```bash
+   bun run build
+   ```
+
+## 📋 Persyaratan Sistem
+
+- Node.js 16.x atau lebih baru
+- Bun runtime
+- Koneksi internet untuk mengakses API eQuran
+
+## 🛠️ Teknologi yang Digunakan
+
+- React.js
+- Bun (sebagai runtime JavaScript/TypeScript)
+- eQuran API
+- React Router
+- Tailwind CSS / styled-components (untuk styling)
+
+## 📝 Penggunaan
+
+1. Buka aplikasi di browser
+2. Pilih kota atau masukkan lokasi Anda
+3. Lihat jadwal imsakiyah untuk hari ini atau pilih tanggal tertentu
+
+## 🔄 API Endpoints
+
+Aplikasi ini menggunakan API dari eQuran dengan endpoint berikut:
+- `GET /api/imsakiyah` - Mendapatkan jadwal imsakiyah berdasarkan lokasi dan tanggal
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+## 🙏 Terima Kasih
+
+Terima kasih kepada eQuran yang telah menyediakan API untuk data jadwal imsakiyah.
+
+---
+
+Dibuat dengan ❤️ untuk memudahkan ibadah Ramadhan

@@ -17,21 +17,25 @@ Imsakiyah Schedule adalah aplikasi web modern yang memudahkan umat Muslim untuk 
 ## 🚀 Cara Menjalankan
 
 1. **Install Bun (jika belum)**
+
    ```bash
    curl -fsSL https://bun.sh/install | bash
    ```
 
 2. **Install dependencies**
+
    ```bash
    bun install
    ```
 
 3. **Jalankan aplikasi dalam mode development**
+
    ```bash
    bun run dev
    ```
 
 4. **Build untuk produksi**
+
    ```bash
    bun run build
    ```
@@ -59,6 +63,7 @@ Imsakiyah Schedule adalah aplikasi web modern yang memudahkan umat Muslim untuk 
 ## 🔄 API Endpoints
 
 Aplikasi ini menggunakan API dari eQuran dengan endpoint berikut:
+
 - `GET /api/imsakiyah` - Mendapatkan jadwal imsakiyah berdasarkan lokasi dan tanggal
 
 ## 📄 Lisensi

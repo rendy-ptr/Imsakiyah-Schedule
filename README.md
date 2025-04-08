@@ -68,7 +68,9 @@ Imsakiyah Schedule adalah aplikasi web modern yang memudahkan umat Muslim untuk 
 
 Aplikasi ini menggunakan API dari eQuran dengan endpoint berikut:
 
-- `GET /api/imsakiyah` - Mendapatkan jadwal imsakiyah berdasarkan lokasi dan tanggal
+- `GET /api/v2/imsakiyah/provinsi` - Mendapatkan data provinsi di indonesia
+- `POST /api/v2/imsakiyah/kabkota` - Mendapatkan data kabupaten/kota berdasarkan provinsi terpilih
+- `POST /api/v2/imsakiyah` - Mendapatkan jadwal imsakiyah berdasarkan provinsi dan kota terplih
 
 ## 📄 Lisensi
 

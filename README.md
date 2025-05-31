@@ -18,27 +18,39 @@ Imsakiyah Schedule adalah aplikasi web modern yang memudahkan umat Muslim untuk 
 - Dukungan untuk berbagai wilayah Indonesia
 - Mode gelap/terang (theme switching)
 
-## 🚀 Cara Menjalankan
+## 🚀 Cara Menjalankanhttps://github.com/rendy-ptr/Imsakiyah-Schedule.git
 
 1. **Install Bun (jika belum)**
 
    ```bash
    curl -fsSL https://bun.sh/install | bash
    ```
+   
+2. **Clone Project**
 
-2. **Install dependencies**
+   ```bash
+   git clone https://github.com/rendy-ptr/Imsakiyah-Schedule.git
+   ```
+
+3. **Open Directory**
+
+   ```bash
+   cd Imsakiyah-Schedule
+   ```
+
+4. **Install dependencies**
 
    ```bash
    bun install
    ```
 
-3. **Jalankan aplikasi dalam mode development**
+5. **Jalankan aplikasi dalam mode development**
 
    ```bash
    bun run dev
    ```
 
-4. **Build untuk produksi**
+6. **Build untuk produksi**
 
    ```bash
    bun run build
